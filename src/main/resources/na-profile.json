@@ -1,0 +1,37 @@
+{
+  "component": "planet",
+  "metaData": {"data-testid":  "myid-earth", "label": "Earth", "something": "should not see it"},
+  "items": [
+    {
+      "component": "continent",
+      "metaData": {"data-testid":  "myid-europe", "label": "Europe"},
+      "items": [
+        {
+          "component": "country",
+          "metaData": {"data-testid":  "myid-france", "label": "France"},
+          "items": [
+            {
+              "component": "city",
+              "metaData": {"data-testid":  "myid-paris", "label": "Paris"},
+              "items": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "component": "continent",
+      "metaData": {"data-testid":  "myid-america", "label": "America"},
+      "items": [
+        {
+          "component": "country",
+          "metaData": {"data-testid":  "myid-us", "label": "USA"}
+        },
+        {
+          "component": "country",
+          "metaData": {"data-testid":  "myid-mexico", "label": "Mexico"}
+        }
+      ]
+    }
+  ]
+}
