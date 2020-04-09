@@ -1,0 +1,5 @@
+action,testid,value
+goToUrl,,https://abc.com
+goToPage,,create-profile
+inputValue,myid-earth,sample data 1
+inputValue,myid-america,sample data 2

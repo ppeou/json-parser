@@ -1,17 +1,15 @@
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class MyComponent {
-
-    @JsonProperty("component")
     String component;
+    public String label;
+    public String testId;
+    public WebElement webElement;
 
-    @JsonProperty("items")
-    public MyComponent[] items;
+    @Override
+    public String toString() {
+        return   testId + " / "
+                + component + " / "
+                + label + " / "
+                + webElement.toString(testId);
 
-    @JsonProperty("metaData")
-    public MyMetaData metaData;
-
+    }
 }

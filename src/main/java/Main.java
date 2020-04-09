@@ -1,14 +1,10 @@
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,30 +14,26 @@ public class Main {
         String profileFile = Main.class.getClassLoader()
                 .getResource("na-profile.json")
                 .getFile();
+        String testDataFile = Main.class.getClassLoader()
+                .getResource("na-profile-test.csv")
+                .getFile();
 
+        Map<String, MyComponent> myElements = Util.readJSONFile(profileFile);
+        List<TestDataCSV> cases = Util.readCSVFile(testDataFile);
+        for(TestDataCSV itcase : cases) {
+            System.out.printf("%s\n", itcase.toString());
+            if(myElements.containsKey(itcase.testId)) {
+                System.out.printf("--- Element: [%s]\n",
+                        myElements.get(itcase.testId).toString());
+            }
+        }
 
+        System.out.println("\n------------------\n");
 
-        try {
-            FileReader fileReader = new FileReader(profileFile);
-            ObjectMapper mapper = new ObjectMapper();
-
-            //JSON file to Java object
-            MyComponent obj = mapper.readValue(fileReader, MyComponent.class);
-            System.out.println(mapper.writeValueAsString(obj));
-
-            /*Object obj = parser.parse(fileReader);
-
-            JSONObject jsonObj = (JSONObject) obj;
-            JSONArray items = (JSONArray) jsonObj.get("items");
-
-            Iterator<JSONObject> iterator = items.iterator();
-
-            while(iterator.hasNext()) {
-                System.out.println(iterator.next());
-            }*/
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        for(Map.Entry myElement : myElements.entrySet()) {
+            System.out.printf("Test ID: `%s`\n Value: `%s`\n",
+                    myElement.getKey(),
+                    myElement.getValue().toString());
         }
 
     }
