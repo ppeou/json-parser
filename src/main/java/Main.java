@@ -8,8 +8,6 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello");
-
         JSONParser parser = new JSONParser();
         String profileFile = Main.class.getClassLoader()
                 .getResource("na-profile.json")
@@ -31,7 +29,7 @@ public class Main {
         System.out.println("\n------------------\n");
 
         for(Map.Entry myElement : myElements.entrySet()) {
-            System.out.printf("Test ID: `%s`\n Value: `%s`\n",
+            System.out.printf("Test ID: `%s`\n--- Value: `%s`\n",
                     myElement.getKey(),
                     myElement.getValue().toString());
         }
