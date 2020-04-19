@@ -1,14 +1,15 @@
+package me.app.core;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Arrays;
 import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class MyComponentJSON {
 
     @JsonProperty("component")
-    String component;
+    public String component;
 
     @JsonProperty("items")
     public MyComponentJSON[] items;

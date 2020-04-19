@@ -1,3 +1,5 @@
+package me.app.core;
+
 public class TestDataCSV {
     String action;
     String testId;

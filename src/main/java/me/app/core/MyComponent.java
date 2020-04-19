@@ -1,5 +1,7 @@
+package me.app.core;
+
 public class MyComponent {
-    String component;
+    public String component;
     public String label;
     public String testId;
     public WebElement webElement;

@@ -1,8 +1,9 @@
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import me.app.core.MyComponent;
+import me.app.core.TestDataCSV;
+import me.app.util.Util;
 import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
 import java.util.List;
 import java.util.Map;
 
@@ -18,7 +19,7 @@ public class Main {
 
         Map<String, MyComponent> myElements = Util.readJSONFile(profileFile);
         List<TestDataCSV> cases = Util.readCSVFile(testDataFile);
-        for(TestDataCSV itcase : cases) {
+        /*for(TestDataCSV itcase : cases) {
             System.out.printf("%s\n", itcase.toString());
             if(myElements.containsKey(itcase.testId)) {
                 System.out.printf("--- Element: [%s]\n",
@@ -32,7 +33,7 @@ public class Main {
             System.out.printf("Test ID: `%s`\n--- Value: `%s`\n",
                     myElement.getKey(),
                     myElement.getValue().toString());
-        }
+        }*/
 
     }
 

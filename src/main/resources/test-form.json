@@ -1,0 +1,33 @@
+{
+  "component": "section",
+  "metaData": {
+    "data-testid": "user-info-section"
+  },
+  "items": [
+    {
+      "component": "textinput",
+      "metaData": {
+        "data-testid": "userName"
+      }
+    },
+    {
+      "component": "textinput",
+      "metaData": {
+        "data-testid": "email"
+      }
+    },
+    {
+      "component": "dropdown",
+      "metaData": {
+        "data-testid": "city"
+      }
+    },
+    {
+      "component": "button",
+      "metaData": {
+        "data-testid": "saveButton"
+      }
+    }
+
+  ]
+}

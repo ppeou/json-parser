@@ -1,6 +1,11 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
+package me.app.util;
 
-import java.io.FileNotFoundException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import me.app.core.MyComponent;
+import me.app.core.MyComponentJSON;
+import me.app.core.TestDataCSV;
+import me.app.core.WebElement;
+
 import java.io.FileReader;
 import java.util.*;
 
@@ -32,10 +37,10 @@ public class Util {
             FileReader fileReader = new FileReader(profileFile);
             ObjectMapper mapper = new ObjectMapper();
 
-            //load JSON file into MyComponentJSON object
+            //load JSON file into me.app.core.MyComponentJSON object
             MyComponentJSON obj = mapper.readValue(fileReader, MyComponentJSON.class);
 
-            //flat MyComponentJSON nested structure into flat Map<String, MyComponent>
+            //flat me.app.core.MyComponentJSON nested structure into flat Map<String, me.app.core.MyComponent>
             return Util.flatNestedArray(obj, null);
         } catch (Exception ex) {
             return null;
