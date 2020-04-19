@@ -2,8 +2,8 @@ package me.app.react.ui.component;
 
 import me.app.react.ui.behavior.*;
 
-public class BlankElement extends BaseComponent {
-    public BlankElement(String testId) {
+public class UnknownElement extends BaseComponent {
+    public UnknownElement(String testId) {
         super(testId);
     }
 

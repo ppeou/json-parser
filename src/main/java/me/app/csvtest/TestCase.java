@@ -3,6 +3,8 @@ package me.app.csvtest;
 import me.app.react.ui.component.BaseComponent;
 import me.app.react.ui.component.ComponentFactory;
 
+import java.lang.reflect.InvocationTargetException;
+
 public class TestCase extends CsvTestCase {
 
     String testId;

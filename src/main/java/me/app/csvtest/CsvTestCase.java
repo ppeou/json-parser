@@ -1,5 +1,7 @@
 package me.app.csvtest;
 
+import java.lang.reflect.InvocationTargetException;
+
 public abstract class CsvTestCase {
     public void add(CsvTestCase csvTestCase) {
         throw new UnsupportedOperationException();
@@ -26,7 +28,7 @@ public abstract class CsvTestCase {
     }
 
 
-    public boolean run() {
+    public boolean run() throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
         throw new UnsupportedOperationException();
     }
 }

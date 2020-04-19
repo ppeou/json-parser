@@ -4,9 +4,9 @@ import me.app.react.ui.behavior.ClearDropdown;
 import me.app.react.ui.behavior.ClickElement;
 import me.app.react.ui.behavior.SetValueDropdown;
 
-public class DropDown extends BaseComponent {
+public class Dropdown extends BaseComponent {
 
-    public DropDown(String testId) {
+    public Dropdown(String testId) {
         super(testId);
     }
 

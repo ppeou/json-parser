@@ -1,14 +1,39 @@
 package me.app.react.ui.component;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+import java.util.HashMap;
+import java.util.Map;
+
 public class ComponentFactory {
-    public static BaseComponent create(String componentType, String testId) {
-        if(componentType.equalsIgnoreCase("dropdown")) {
-            return new DropDown(testId);
-        } else if(componentType.equalsIgnoreCase("textinput")) {
-            return new TextInput(testId);
-        } else if(componentType.equalsIgnoreCase("button")) {
-            return new Button(testId);
+
+    private static final Map<String, Constructor<?>> availableComponents=
+            new HashMap<String, Constructor<?>>();
+
+    static {
+        {
+            try {
+                availableComponents.put("dropdown", Dropdown.class.getConstructor(String.class));
+                availableComponents.put("textinput", TextInput.class.getConstructor(String.class));
+                availableComponents.put("button", Button.class.getConstructor(String.class));
+                availableComponents.put("unknown", UnknownElement.class.getConstructor(String.class));
+            } catch (NoSuchMethodException e) {
+                e.printStackTrace();
+            }
         }
-        return new BlankElement(testId);
+    }
+
+
+    public static BaseComponent create(String componentType, String testId)  {
+        BaseComponent element = null;
+
+        try {
+            Constructor<BaseComponent> constr = (Constructor<BaseComponent>) availableComponents.get(componentType);
+            element = constr.newInstance(testId);
+        } catch (Exception ex) {
+            System.out.println(ex.toString());
+        } finally {
+            return element;
+        }
     }
 }

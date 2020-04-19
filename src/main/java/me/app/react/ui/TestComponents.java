@@ -5,7 +5,7 @@ import me.app.react.ui.component.ComponentFactory;
 
 public class TestComponents {
     public static void main(String[] args) {
-        BaseComponent firstName = ComponentFactory.create("textinput", "firstName");
+       /* BaseComponent firstName = ComponentFactory.create("textinput", "firstName");
         BaseComponent city = ComponentFactory.create("dropdown", "city");
         BaseComponent button = ComponentFactory.create("button", "save");
 
@@ -23,6 +23,6 @@ public class TestComponents {
 
         button.click();
         button.clear();
-        button.setValue("Hello");
+        button.setValue("Hello");*/
     }
 }

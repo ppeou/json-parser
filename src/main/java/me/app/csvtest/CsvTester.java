@@ -3,6 +3,7 @@ package me.app.csvtest;
 import me.app.core.MyComponent;
 
 import java.io.FileReader;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -38,10 +39,10 @@ public class CsvTester {
                 action = valueScanner.next();
                 value = valueScanner.next();
 
-                componentType = elementMetaData.containsKey(testId) ? elementMetaData.get(testId).component : "none";
+                componentType = elementMetaData.containsKey(testId) ? elementMetaData.get(testId).component : "unknown";
 
 
-                testCaseList.add(new TestCase(action,testId,value, componentType));
+                testCaseList.add(new TestCase(action,testId,value, componentType.toLowerCase()));
             }
         } catch (Exception ex) {
             System.out.println(ex.toString());
