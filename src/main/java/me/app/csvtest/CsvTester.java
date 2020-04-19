@@ -50,8 +50,10 @@ public class CsvTester {
     }
 
     public boolean run() {
-
-        return testCaseList.run();
+        System.out.println("Starting to process" + testCaseList.getListName());
+        boolean result = testCaseList.run();
+        System.out.println("-- test completed.");
+        return result;
     }
 
     @Override

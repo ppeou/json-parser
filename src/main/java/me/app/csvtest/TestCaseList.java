@@ -2,6 +2,7 @@ package me.app.csvtest;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TestCaseList extends CsvTestCase {
@@ -37,12 +38,12 @@ public class TestCaseList extends CsvTestCase {
     }
 
     public boolean run() {
+        boolean hasNoError = true;
         for(int i=0; i < testCases.size(); i++) {
             TestCase tc = (TestCase) testCases.get(i);
-            System.out.println(tc.toString());
-            tc.run();
+            hasNoError= tc.run(i+1) && hasNoError ;
         }
-        return true;
+        return hasNoError;
     }
 
     @Override

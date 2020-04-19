@@ -4,7 +4,7 @@ public class SetValueTextInput implements SetValueComponent {
 
     public void perform(String testId, String value) {
         System.out.println(testId + ":: set value for text-input :: " + value);
-        System.out.println("\tget me.app.core.WebElement by TestID");
+        System.out.println("\tget WebElement by TestID");
         System.out.println("\tget Grid Cell by XPATH //[@data-testid=testid]//ancestor::[@role=gridcell]");
         System.out.println("\tclick on WebELement");
         System.out.println("\tsleep 1000");

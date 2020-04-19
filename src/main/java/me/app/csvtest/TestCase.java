@@ -1,9 +1,8 @@
 package me.app.csvtest;
 
-import me.app.react.ui.component.BaseComponent;
-import me.app.react.ui.component.ComponentFactory;
-
-import java.lang.reflect.InvocationTargetException;
+import me.app.action.TestAction;
+import me.app.action.TestActionFactory;
+import me.app.action.TestComponent;
 
 public class TestCase extends CsvTestCase {
 
@@ -17,23 +16,13 @@ public class TestCase extends CsvTestCase {
         this.testId = testId;
         this.value = value;
         this.componentType = componentType;
-
     }
 
-    public boolean run() {
-
-        BaseComponent element = ComponentFactory.create(componentType, testId);
-        if(action.equalsIgnoreCase("click")) {
-            element.click();
-        } else if(action.equalsIgnoreCase("clear")) {
-            element.clear();
-        } else if(action.equalsIgnoreCase("setValue")) {
-            element.setValue(value);
-        } else {
-            element.doNoAction(action, value);
-        }
-
-        return true;
+    public boolean run(int step) {
+        System.out.println(step + ". Executing ["+ action +"] on ["+ testId +"]");
+        TestComponent element = new TestComponent(componentType, testId);
+        TestAction testAction = TestActionFactory.create(componentType, action);
+        return testAction.execute(element, action, value);
     }
 
     @Override

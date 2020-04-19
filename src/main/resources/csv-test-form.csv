@@ -1,9 +1,9 @@
 TestId,Action,Value
--,openUrl,http://abc.com
--,gotoUserDetail,1
+---,openUrl,http://abc.com
+---,goToUserDetail,1
 userName,setValue,abc
-email,clear,-
+email,clear,---
 email,setValue,abc@email.com
 city,setValue,Houston
 city,doSomethingFunny,lala
-saveButton,click,-
+saveButton,click,---
