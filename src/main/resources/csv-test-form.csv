@@ -6,4 +6,5 @@ email,clear,---
 email,setValue,abc@email.com
 city,setValue,Houston
 city,doSomethingFunny,lala
+saveButton,clear,---
 saveButton,click,---
